@@ -1,10 +1,10 @@
 class Orbitcode < Formula
   desc "AI Coding Agent with model failover, MCP, plugins, and session persistence"
-  homepage "https://github.com/OrbitOmen/orbitcode"
-  url "https://github.com/OrbitOmen/orbitcode/archive/refs/tags/v0.1.0.tar.gz"
+  homepage "https://github.com/orbit-omen/orbitcode"
+  url "https://github.com/orbit-omen/orbitcode/archive/refs/tags/v0.1.0.tar.gz"
   sha256 "REPLACE_WITH_ACTUAL_SHA256_AFTER_RELEASE"
   license "MIT"
-  head "https://github.com/OrbitOmen/orbitcode.git", branch: "main"
+  head "https://github.com/orbit-omen/orbitcode.git", branch: "main"
 
   depends_on "python@3.11"
 
@@ -13,7 +13,7 @@ class Orbitcode < Formula
     venv = virtualenv_create(libexec, "python3.11")
 
     # Install from GitHub (latest main branch)
-    venv.pip_install "git+https://github.com/OrbitOmen/orbitcode.git@main#egg=orbitcode[dev,browser,web]"
+    venv.pip_install "git+https://github.com/orbit-omen/orbitcode.git@main#egg=orbitcode[dev,browser,web]"
 
     # Install playwright chromium
     system libexec/"bin/playwright", "install", "chromium"

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # OrbitCode Universal Installer - Works on Linux, macOS, and Windows (via WSL/Git Bash)
-# Usage: curl -fsSL https://raw.githubusercontent.com/OrbitOmen/orbitcode/main/install.sh | bash
-#        or: wget -qO- https://raw.githubusercontent.com/OrbitOmen/orbitcode/main/install.sh | bash
+# Usage: curl -fsSL https://raw.githubusercontent.com/orbit-omen/orbitcode/main/install.sh | bash
+#        or: wget -qO- https://raw.githubusercontent.com/orbit-omen/orbitcode/main/install.sh | bash
 
 set -euo pipefail
 
@@ -15,7 +15,7 @@ BOLD='\033[1m'
 NC='\033[0m' # No Color
 
 # Configuration
-REPO="OrbitOmen/orbitcode"
+REPO="orbit-omen/orbitcode"
 INSTALL_DIR="${HOME}/.local/bin"
 GITHUB_RAW="https://raw.githubusercontent.com/${REPO}/main"
 VERSION="${VERSION:-latest}"
@@ -33,7 +33,7 @@ print_banner() {
 ║  ╚═╝     ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚══════╝╚═╝  ╚═╝     ║
 ║                                                              ║
 ║   AI Coding Agent  •  Model Failover  •  MCP  •  Plugins    ║
-║   Made by OrbitOmen                                          ║
+║   Made by orbit-omen                                          ║
 ╚═══════════════════════════════════════════════════════════════╝
 EOF
     echo -e "${NC}"

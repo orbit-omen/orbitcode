@@ -107,7 +107,7 @@ class Settings(BaseSettings):
     # OpenRouter
     openrouter_api_key: Optional[str] = Field(default=None, validation_alias="OPENROUTER_API_KEY")
     openrouter_base_url: str = "https://openrouter.ai/api/v1"
-    openrouter_referer: str = "https://github.com/OrbitOmen/orbitcode"
+    openrouter_referer: str = "https://github.com/orbit-omen/orbitcode"
     openrouter_title: str = "OrbitCode"
 
     # Direct Providers

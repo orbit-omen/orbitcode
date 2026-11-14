@@ -8,10 +8,10 @@
 
 .USAGE
     # Run in PowerShell (Admin not required):
-    irm https://raw.githubusercontent.com/OrbitOmen/orbitcode/main/install.ps1 | iex
+    irm https://raw.githubusercontent.com/orbit-omen/orbitcode/main/install.ps1 | iex
 
     # Or download and run:
-    wget https://raw.githubusercontent.com/OrbitOmen/orbitcode/main/install.ps1 -OutFile install.ps1
+    wget https://raw.githubusercontent.com/orbit-omen/orbitcode/main/install.ps1 -OutFile install.ps1
     .\install.ps1
 
 .NOTES
@@ -46,7 +46,7 @@ function Write-Banner {
 ║  ╚═╝     ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚══════╝╚═╝  ╚═╝     ║
 ║                                                              ║
 ║   AI Coding Agent  •  Model Failover  •  MCP  •  Plugins    ║
-║   Made by OrbitOmen                                          ║
+║   Made by orbit-omen                                          ║
 ╚═══════════════════════════════════════════════════════════════╝
 "@ -ForegroundColor $Cyan
 }
@@ -72,7 +72,7 @@ Write-Info "Admin rights: $isAdmin"
 Write-Host ""
 
 # Configuration
-$REPO = "OrbitOmen/orbitcode"
+$REPO = "orbit-omen/orbitcode"
 $INSTALL_DIR = "$env:USERPROFILE\.orbitcode"
 $VENV_DIR = "$INSTALL_DIR\venv"
 $VENV_SCRIPTS = "$VENV_DIR\Scripts"

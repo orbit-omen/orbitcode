@@ -59,7 +59,7 @@ theme_cycle = "ctrl+h"
 # PROVIDER API KEYS (SET IN ~/.orbitcode/.env)
 # ============================================================================
 openrouter_base_url = "https://openrouter.ai/api/v1"
-openrouter_referer = "https://github.com/OrbitOmen/orbitcode"
+openrouter_referer = "https://github.com/orbit-omen/orbitcode"
 openrouter_title = "OrbitCode"
 
 # ============================================================================

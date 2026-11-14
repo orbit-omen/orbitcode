@@ -1,6 +1,6 @@
 # OrbitCode
 
-**AI Coding Agent with model failover, MCP, plugins, and session persistence** — made by OrbitOmen.
+**AI Coding Agent with model failover, MCP, plugins, and session persistence** — made by orbit-omen.
 
 ## Features
 
@@ -15,7 +15,7 @@
 
 ```bash
 # From source (recommended for development)
-git clone https://github.com/OrbitOmen/orbitcode
+git clone https://github.com/orbit-omen/orbitcode
 cd orbitcode
 pip install -e ".[dev,browser,web]"
 playwright install chromium
@@ -219,4 +219,4 @@ ruff format .
 
 ## License
 
-MIT — Made by OrbitOmen
+MIT — Made by orbit-omen
