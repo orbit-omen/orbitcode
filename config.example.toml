@@ -1,0 +1,300 @@
+# OrbitCode Configuration Example
+# Copy this to ~/.orbitcode/config.toml and customize
+
+# ============================================================================
+# BRAND IDENTITY (PROTECTED - CANNOT BE MODIFIED)
+# ============================================================================
+app_name = "OrbitCode"
+app_version = "0.1.0"
+maker = "OrbitOmen"
+
+# ============================================================================
+# UI / TUI SETTINGS
+# ============================================================================
+layout = "studio"           # stream, studio, command
+theme = "orbit-nebula"      # orbit-nebula, orbit-midnight, orbit-solar, orbit-ghost
+icon_pack = "nerd"          # nerd, unicode, ascii
+show_left_tree = true
+show_right_inspector = true
+mouse_enabled = true
+animations = true
+mascot_enabled = true
+mascot_style = "full"       # full, compact, minimal
+mascot_custom_ascii = ""    # Custom JSON frames
+status_bar_widgets = ["model", "mode", "context", "tokens_saved", "layout", "mascot"]
+
+# ============================================================================
+# KEYBINDINGS (FULLY REMAPABLE)
+# ============================================================================
+[keybindings]
+quit = "ctrl+q"
+new_session = "ctrl+n"
+save_session = "ctrl+s"
+command_palette = "ctrl+p"
+toggle_tree = "ctrl+b"
+toggle_inspector = "ctrl+i"
+cycle_mode = "ctrl+m"
+rewind = "ctrl+r"
+new_tab = "ctrl+t"
+next_tab = "ctrl+tab"
+prev_tab = "ctrl+shift+tab"
+focus_input = "ctrl+f"
+toggle_mascot = "ctrl+u"
+layout_cycle = "ctrl+l"
+theme_cycle = "ctrl+h"
+
+# ============================================================================
+# ALIASES (USER-DEFINED SLASH COMMANDS)
+# ============================================================================
+[aliases]
+# Example aliases:
+# pt = "ponytail_sass"
+# pf = "ponytail_fact"
+# pr = "ponytail_roast"
+# pe = "ponytail_encourage"
+# pa = "ponytail_animate dance"
+# config = "customise"
+
+# ============================================================================
+# PROVIDER API KEYS (SET IN ~/.orbitcode/.env)
+# ============================================================================
+openrouter_base_url = "https://openrouter.ai/api/v1"
+openrouter_referer = "https://github.com/OrbitOmen/orbitcode"
+openrouter_title = "OrbitCode"
+
+# ============================================================================
+# MODELS & FAILOVER CHAIN
+# ============================================================================
+[[models]]
+name = "meta-llama/llama-3.2-3b-instruct:free"
+provider = "openrouter"
+api_key_env = "OPENROUTER_API_KEY"
+base_url = "https://openrouter.ai/api/v1"
+max_tokens = 8192
+temperature = 0.1
+timeout = 60.0
+max_retries = 2
+is_free = true
+priority = 0
+
+[[models]]
+name = "mistralai/mistral-7b-instruct:free"
+provider = "openrouter"
+api_key_env = "OPENROUTER_API_KEY"
+base_url = "https://openrouter.ai/api/v1"
+max_tokens = 8192
+temperature = 0.1
+timeout = 60.0
+max_retries = 2
+is_free = true
+priority = 1
+
+[[models]]
+name = "google/gemma-2-9b-it:free"
+provider = "openrouter"
+api_key_env = "OPENROUTER_API_KEY"
+base_url = "https://openrouter.ai/api/v1"
+max_tokens = 8192
+temperature = 0.1
+timeout = 60.0
+max_retries = 2
+is_free = true
+priority = 2
+
+[[models]]
+name = "qwen/qwen-2.5-7b-instruct:free"
+provider = "openrouter"
+api_key_env = "OPENROUTER_API_KEY"
+base_url = "https://openrouter.ai/api/v1"
+max_tokens = 8192
+temperature = 0.1
+timeout = 60.0
+max_retries = 2
+is_free = true
+priority = 3
+
+[[models]]
+name = "anthropic/claude-3.5-haiku"
+provider = "openrouter"
+api_key_env = "OPENROUTER_API_KEY"
+base_url = "https://openrouter.ai/api/v1"
+max_tokens = 8192
+temperature = 0.1
+timeout = 60.0
+max_retries = 2
+is_free = false
+priority = 10
+
+[[models]]
+name = "openai/gpt-4o-mini"
+provider = "openrouter"
+api_key_env = "OPENROUTER_API_KEY"
+base_url = "https://openrouter.ai/api/v1"
+max_tokens = 8192
+temperature = 0.1
+timeout = 60.0
+max_retries = 2
+is_free = false
+priority = 11
+
+# Role-based model assignments
+planner_model = ""
+coder_model = ""
+reviewer_model = ""
+search_summarizer_model = ""
+compactor_model = ""
+
+# Model routing rules (DSL)
+model_routing_rules = []
+
+# Budget limits
+max_turn_cost_usd = 0.50
+max_session_cost_usd = 10.0
+
+# ============================================================================
+# TOOLS
+# ============================================================================
+default_shell = "/bin/bash"
+max_file_size = 10485760
+allowed_commands = ["ls", "cat", "head", "tail", "grep", "rg", "find", "git", "python", "node", "npm", "pip", "cargo", "go", "make", "cmake", "docker", "kubectl", "terraform"]
+blocked_commands = ["rm -rf /", "dd if=", "mkfs", "fdisk", "shutdown", "reboot", "halt"]
+
+# ============================================================================
+# SESSION
+# ============================================================================
+session_dir = "~/.orbitcode/sessions"
+max_session_history = 100
+auto_save_interval = 5
+
+# ============================================================================
+# MCP
+# ============================================================================
+mcp_enabled = true
+mcp_servers = {}
+
+# ============================================================================
+# PLUGINS
+# ============================================================================
+plugins_dir = "~/.orbitcode/plugins"
+enabled_plugins = ["ponytail"]  # Enable ponytail plugin
+
+# ============================================================================
+# BROWSER
+# ============================================================================
+browser_enabled = true
+browser_headless = true
+browser_timeout = 30.0
+
+# ============================================================================
+# WEB SEARCH
+# ============================================================================
+web_search_enabled = true
+web_search_provider = "duckduckgo"
+web_search_api_key = ""
+
+# ============================================================================
+# GOOGLE AI SEARCH / GROUNDING
+# ============================================================================
+google_grounding_enabled = true
+search_cache_ttl_hours = 72
+compress_with_small_model = true
+search_summarizer_model = "ollama/llama3.2:3b"
+
+# ============================================================================
+# LEARNING ENGINE
+# ============================================================================
+learning_enabled = true
+auto_inject_lessons = true
+max_lessons_per_prompt = 3
+auto_playbook = true
+negative_rules_strict = true
+
+# ============================================================================
+# SAFETY / PERMISSION MODES
+# ============================================================================
+permission_mode = "smart"  # ask, auto_edit, plan, yolo, smart
+shadow_git_checkpoints = true
+redact_secrets = true
+sandbox_destructive_commands = true
+destructive_patterns = ["rm -rf", "git reset --hard", "git push --force", "DROP TABLE", "DELETE FROM", "truncate", "mkfs", "fdisk", "shutdown", "reboot", "> /dev/sd"]
+
+# Smart mode specific triggers
+smart_mode_triggers = ["destructive_command", "large_file_change", "external_api_cost", "git_push", "long_test_run", "commit_no_message", "install_packages"]
+
+# ============================================================================
+# EXTERNAL AI HARNESSES
+# ============================================================================
+#
+# Each harness can have custom commands and templates!
+# Use the templates or define your own.
+#
+# Template options: claude_code, claude_code_fcc, codex, codex_custom, aider, opencode, agy, gemini, custom_stdin
+
+[harnesses]
+# ----------------------------------------------------------------
+# CLAUDE CODE - Use the official claude command
+# ----------------------------------------------------------------
+# claude_code = { command = "claude", args = [], version_flag = "--version", prompt_template = "{context}\n\n## Task:\n{prompt}", enabled = true }
+
+# ----------------------------------------------------------------
+# CLAUDE CODE - Use fcc-claude custom wrapper (YOUR REQUEST!)
+# ----------------------------------------------------------------
+# claude_code_fcc = { command = "fcc-claude", args = [], version_flag = "--version", prompt_template = "{context}\n\n## Task:\n{prompt}", enabled = true }
+
+# ----------------------------------------------------------------
+# CLAUDE CODE - Custom wrapper with specific model
+# ----------------------------------------------------------------
+# claude_code_opus = { command = "fcc-claude", args = ["--model", "opus"], version_flag = "--version", prompt_template = "{context}\n\n## Task:\n{prompt}", enabled = true }
+
+# ----------------------------------------------------------------
+# CODEX - Official OpenAI Codex CLI
+# ----------------------------------------------------------------
+# codex = { command = "codex", args = [], version_flag = "--version", prompt_template = "{context}\n\n## Task:\n{prompt}", enabled = true }
+
+# ----------------------------------------------------------------
+# CODEX - Custom with specific model
+# ----------------------------------------------------------------
+# codex_gpt4 = { command = "codex", args = ["--model", "gpt-4o"], version_flag = "--version", prompt_template = "{context}\n\n## Task:\n{prompt}", enabled = true }
+
+# ----------------------------------------------------------------
+# AIDER
+# ----------------------------------------------------------------
+# aider = { command = "aider", args = ["--no-git", "--yes"], version_flag = "--version", prompt_template = "{context}\n\n## Task:\n{prompt}", enabled = true }
+
+# ----------------------------------------------------------------
+# OPENCODE
+# ----------------------------------------------------------------
+# opencode = { command = "opencode", args = [], version_flag = "--version", prompt_template = "{context}\n\n## Task:\n{prompt}", enabled = true }
+
+# ----------------------------------------------------------------
+# AGY
+# ----------------------------------------------------------------
+# agy = { command = "agy", args = [], version_flag = "--version", prompt_template = "{context}\n\n## Task:\n{prompt}", enabled = true }
+
+# ----------------------------------------------------------------
+# GEMINI CLI
+# ----------------------------------------------------------------
+# gemini = { command = "gemini", args = [], version_flag = "--version", prompt_template = "{context}\n\n## Task:\n{prompt}", enabled = true }
+
+# ----------------------------------------------------------------
+# CUSTOM HARNESS - Your own AI tool with JSON stdin
+# ----------------------------------------------------------------
+# my_tool = { command = "my-ai-tool", args = [], version_flag = "--version", use_stdin = true, input_format = "json", prompt_template = "{prompt}", enabled = true }
+
+# ----------------------------------------------------------------
+# CUSTOM HARNESS - Full example with all options
+# ----------------------------------------------------------------
+# custom_example = {
+#   command = "my-custom-cli",
+#   args = ["--flag", "value"],
+#   env = { "CUSTOM_ENV" = "value" },
+#   version_flag = "--version",
+#   prompt_template = "Context:\n{context}\n\nUser Request:\n{prompt}",
+#   context_template = "### {file}\n```\n{content}\n```",
+#   input_format = "text",
+#   output_parser = "extract_code_blocks",
+#   use_stdin = false,
+#   timeout = 120.0,
+#   custom_command = "my-wrapper-script",
+#   enabled = true
+# }

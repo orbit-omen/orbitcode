@@ -1,0 +1,84 @@
+[project]
+name = "orbitcode"
+version = "0.1.0"
+description = "OrbitCode - AI coding agent with model failover, MCP, plugins, and session persistence"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [
+    {name = "OrbitOmen", email = "orbitomen@example.com"}
+]
+keywords = ["ai", "coding-agent", "cli", "mcp", "openrouter"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+dependencies = [
+    "typer[all]>=0.12",
+    "rich>=13.7",
+    "pydantic>=2.7",
+    "pydantic-settings>=2.3",
+    "httpx>=0.27",
+    "python-dotenv>=1.0",
+    "tomli>=2.0",
+    "tomli-w>=1.0",
+    "sqlalchemy>=2.0",
+    "aiofiles>=23.2",
+    "playwright>=1.40",
+    "mcp>=1.0",
+    "anyio>=4.0",
+    "pyyaml>=6.0",
+    "watchdog>=4.0",
+    "gitpython>=3.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.23",
+    "pytest-mock>=3.12",
+    "ruff>=0.5",
+    "mypy>=1.10",
+    "pre-commit>=3.6",
+]
+browser = [
+    "playwright>=1.40",
+]
+web = [
+    "duckduckgo-search>=5.0",
+    "beautifulsoup4>=4.12",
+    "lxml>=5.0",
+]
+
+[project.scripts]
+ocode = "orbitcode.cli:app"
+orbitcode = "orbitcode.cli:app"
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["orbitcode*"]
+exclude = ["tests*", "orbitcode.egg-info*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+lint.select = ["E", "F", "I", "UP", "B", "C4", "SIM", "T20"]
+lint.ignore = ["S101", "T201", "T203"]
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]

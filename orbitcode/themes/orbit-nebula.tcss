@@ -1,0 +1,562 @@
+/* OrbitCode Nebula Theme - Default */
+@import "textual.css";
+
+:root {
+    /* Core Colors */
+    --orbit-bg: #0B0D14;
+    --orbit-surface: #13161F;
+    --orbit-surface-elevated: #1A1E2A;
+    --orbit-border: #2A2E3E;
+    --orbit-border-bright: #3A3F51;
+
+    /* Brand Colors */
+    --orbit-accent: #A855F7;
+    --orbit-accent-dim: #8B44D6;
+    --orbit-secondary: #F472B6;
+    --orbit-cyan: #22D3EE;
+    --orbit-cyan-dim: #1BA9B8;
+    --orbit-glow: #A855F7;
+
+    /* Semantic Colors */
+    --orbit-success: #22C55E;
+    --orbit-warning: #F59E0B;
+    --orbit-error: #EF4444;
+    --orbit-info: #3B82F6;
+
+    /* Diff Colors */
+    --orbit-diff-add: #166534;
+    --orbit-diff-add-border: #22C55E;
+    --orbit-diff-del: #7F1D1D;
+    --orbit-diff-del-border: #EF4444;
+    --orbit-diff-change: #1E3A5F;
+    --orbit-diff-change-border: #3B82F6;
+
+    /* Text Colors */
+    --orbit-text: #E8EBF0;
+    --orbit-text-dim: #9AA3B2;
+    --orbit-text-muted: #6B7280;
+
+    /* UI Specific */
+    --orbit-header-bg: #0B0D14;
+    --orbit-header-text: #F472B6;
+    --orbit-input-bg: #13161F;
+    --orbit-input-border: #3A3F51;
+    --orbit-input-focus-border: #A855F7;
+    --orbit-scrollbar-bg: #13161F;
+    --orbit-scrollbar-thumb: #3A3F51;
+    --orbit-scrollbar-thumb-hover: #4A4F61;
+
+    /* Mascot Colors */
+    --orbit-mascot-body: #A855F7;
+    --orbit-mascot-ring: #22D3EE;
+    --orbit-mascot-eye-idle: #22D3EE;
+    --orbit-mascot-eye-thinking: #22D3EE;
+    --orbit-mascot-eye-happy: #F472B6;
+    --orbit-mascot-eye-error: #EF4444;
+
+    /* Status Bar */
+    --orbit-status-bg: #0B0D14;
+    --orbit-status-border: #2A2E3E;
+
+    /* Tab Colors */
+    --orbit-tab-bg: #13161F;
+    --orbit-tab-active-bg: #1A1E2A;
+    --orbit-tab-border: #2A2E3E;
+    --orbit-tab-active-border: #A855F7;
+
+    /* Tree Colors */
+    --orbit-tree-guide: #2A2E3E;
+    --orbit-tree-cursor-bg: #1A1E2A;
+    --orbit-tree-cursor-text: #F472B6;
+
+    /* Button Colors */
+    --orbit-button-bg: #1A1E2A;
+    --orbit-button-border: #3A3F51;
+    --orbit-button-hover-bg: #2A2E3E;
+    --orbit-button-hover-border: #A855F7;
+    --orbit-button-primary-bg: #A855F7;
+    --orbit-button-primary-hover: #8B44D6;
+    --orbit-button-danger-bg: #7F1D1D;
+    --orbit-button-danger-hover: #991B1B;
+
+    /* Panel */
+    --orbit-panel-bg: #13161F;
+    --orbit-panel-border: #2A2E3E;
+    --orbit-panel-title: #A855F7;
+
+    /* Tooltip */
+    --orbit-tooltip-bg: #1A1E2A;
+    --orbit-tooltip-border: #A855F7;
+    --orbit-tooltip-text: #E8EBF0;
+
+    /* Selection */
+    --orbit-selection-bg: #A855F733;
+    --orbit-selection-text: #E8EBF0;
+
+    /* Animations */
+    --orbit-animation-fast: 100ms;
+    --orbit-animation-normal: 200ms;
+    --orbit-animation-slow: 400ms;
+}
+
+/* Global Styles */
+Screen {
+    background: var(--orbit-bg);
+    color: var(--orbit-text);
+}
+
+Header {
+    background: var(--orbit-header-bg);
+    color: var(--orbit-header-text);
+    text-style: bold;
+    height: 1;
+    border-bottom: solid var(--orbit-border);
+}
+
+Footer {
+    background: var(--orbit-status-bg);
+    color: var(--orbit-text-dim);
+    border-top: solid var(--orbit-status-border);
+    height: 1;
+}
+
+Footer .key {
+    color: var(--orbit-accent);
+    text-style: bold;
+}
+
+/* Input */
+Input {
+    background: var(--orbit-input-bg);
+    border: solid var(--orbit-input-border);
+    color: var(--orbit-text);
+    padding: 0 1;
+    margin: 0 1;
+}
+
+Input:focus {
+    border: solid var(--orbit-input-focus-border);
+}
+
+/* Buttons */
+Button {
+    background: var(--orbit-button-bg);
+    border: solid var(--orbit-button-border);
+    color: var(--orbit-text);
+    padding: 0 2;
+    min-width: 10;
+}
+
+Button:hover {
+    background: var(--orbit-button-hover-bg);
+    border: solid var(--orbit-button-hover-border);
+}
+
+Button:focus {
+    border: solid var(--orbit-accent);
+}
+
+Button.-primary {
+    background: var(--orbit-button-primary-bg);
+    border: solid var(--orbit-accent);
+    color: var(--orbit-bg);
+}
+
+Button.-primary:hover {
+    background: var(--orbit-button-primary-hover);
+}
+
+Button.-danger {
+    background: var(--orbit-button-danger-bg);
+    border: solid var(--orbit-error);
+    color: var(--orbit-error);
+}
+
+Button.-danger:hover {
+    background: var(--orbit-button-danger-hover);
+}
+
+/* Tree */
+Tree {
+    background: var(--orbit-panel-bg);
+    border: solid var(--orbit-panel-border);
+    color: var(--orbit-text);
+}
+
+Tree > .tree--guide {
+    color: var(--orbit-tree-guide);
+}
+
+Tree .tree--cursor {
+    background: var(--orbit-tree-cursor-bg);
+    color: var(--orbit-tree-cursor-text);
+}
+
+Tree .tree--cursor-line {
+    background: var(--orbit-selection-bg);
+}
+
+/* Static / Labels */
+Static {
+    color: var(--orbit-text);
+}
+
+.panel-title {
+    color: var(--orbit-panel-title);
+    text-style: bold;
+    margin-bottom: 1;
+}
+
+/* Log / RichLog */
+Log {
+    background: var(--orbit-panel-bg);
+    border: solid var(--orbit-panel-border);
+    color: var(--orbit-text);
+    padding: 1;
+}
+
+/* DataTable */
+DataTable {
+    background: var(--orbit-panel-bg);
+    border: solid var(--orbit-panel-border);
+    color: var(--orbit-text);
+}
+
+DataTable > .datatable--header {
+    background: var(--orbit-surface-elevated);
+    color: var(--orbit-accent);
+    text-style: bold;
+}
+
+DataTable > .datatable--cursor {
+    background: var(--orbit-selection-bg);
+    color: var(--orbit-selection-text);
+}
+
+DataTable > .datatable--row-hover {
+    background: var(--orbit-surface-elevated);
+}
+
+/* TabbedContent */
+TabbedContent {
+    background: var(--orbit-panel-bg);
+    border: solid var(--orbit-panel-border);
+}
+
+TabbedContent .tabbed-content--tab-bar {
+    background: var(--orbit-tab-bg);
+    border-bottom: solid var(--orbit-tab-border);
+}
+
+TabbedContent .tabbed-content--tab {
+    background: var(--orbit-tab-bg);
+    color: var(--orbit-text-dim);
+    border: solid var(--orbit-tab-border);
+    border-bottom: none;
+    padding: 0 2;
+    margin: 0 1;
+}
+
+TabbedContent .tabbed-content--tab.-active {
+    background: var(--orbit-tab-active-bg);
+    color: var(--orbit-accent);
+    border: solid var(--orbit-tab-active-border);
+    border-bottom: none;
+}
+
+/* Containers */
+Vertical, Horizontal, Container {
+    background: transparent;
+}
+
+#sidebar {
+    width: 30%;
+    min-width: 40;
+    max-width: 60;
+    border-right: solid var(--orbit-border);
+    background: var(--orbit-panel-bg);
+}
+
+#main {
+    width: 70%;
+    background: var(--orbit-bg);
+}
+
+#right-inspector {
+    width: 35%;
+    min-width: 50;
+    border-left: solid var(--orbit-border);
+    background: var(--orbit-panel-bg);
+}
+
+/* Chat bubbles */
+.message-user {
+    color: var(--orbit-cyan);
+    text-style: bold;
+}
+
+.message-assistant {
+    color: var(--orbit-secondary);
+}
+
+.message-tool {
+    color: var(--orbit-warning);
+}
+
+.message-system {
+    color: var(--orbit-text-dim);
+    text-style: italic;
+}
+
+.message-error {
+    color: var(--orbit-error);
+    text-style: bold;
+}
+
+/* Tool approval cards */
+.tool-approval-card {
+    background: var(--orbit-surface-elevated);
+    border: solid var(--orbit-warning);
+    padding: 1;
+    margin: 1 0;
+}
+
+.tool-approval-card .button-row {
+    height: auto;
+    margin-top: 1;
+}
+
+/* Diff viewer */
+.diff-viewer {
+    background: var(--orbit-panel-bg);
+    border: solid var(--orbit-panel-border);
+}
+
+.diff-viewer .diff-add {
+    background: var(--orbit-diff-add);
+    border-left: thick var(--orbit-diff-add-border);
+    color: #86EFAC;
+}
+
+.diff-viewer .diff-del {
+    background: var(--orbit-diff-del);
+    border-left: thick var(--orbit-diff-del-border);
+    color: #FCA5A5;
+}
+
+.diff-viewer .diff-change {
+    background: var(--orbit-diff-change);
+    border-left: thick var(--orbit-diff-change-border);
+    color: #93C5FD;
+}
+
+.diff-viewer .diff-context {
+    color: var(--orbit-text-dim);
+}
+
+/* Status bar pills */
+.status-pill {
+    background: var(--orbit-surface-elevated);
+    border: solid var(--orbit-border);
+    color: var(--orbit-text);
+    padding: 0 1;
+    margin: 0 1;
+    min-width: 12;
+}
+
+.status-pill:hover {
+    border: solid var(--orbit-accent);
+    background: var(--orbit-tab-active-bg);
+}
+
+.status-pill.-active {
+    border: solid var(--orbit-accent);
+    color: var(--orbit-accent);
+}
+
+/* Command Palette */
+.command-palette {
+    background: var(--orbit-surface-elevated);
+    border: solid var(--orbit-accent);
+    padding: 1;
+}
+
+.command-palette .input {
+    border: none;
+    background: transparent;
+}
+
+.command-palette .results {
+    max-height: 20;
+}
+
+.command-palette .result-item {
+    padding: 0 1;
+    color: var(--orbit-text);
+}
+
+.command-palette .result-item.-highlighted {
+    background: var(--orbit-selection-bg);
+    color: var(--orbit-accent);
+}
+
+/* Tooltip */
+.tooltip {
+    background: var(--orbit-tooltip-bg);
+    border: solid var(--orbit-tooltip-border);
+    color: var(--orbit-tooltip-text);
+    padding: 0 1;
+}
+
+/* Scrollbar */
+.scrollbar {
+    background: var(--orbit-scrollbar-bg);
+}
+
+.scrollbar .slider {
+    background: var(--orbit-scrollbar-thumb);
+}
+
+.scrollbar .slider:hover {
+    background: var(--orbit-scrollbar-thumb-hover);
+}
+
+/* Mascot Widget */
+#mascot-container {
+    height: 7;
+    width: 100%;
+    content-align: center middle;
+    background: transparent;
+}
+
+#mascot-static {
+    content-align: center middle;
+    width: auto;
+    height: auto;
+}
+
+/* Splits */
+HorizontalSplitter, VerticalSplitter {
+    background: var(--orbit-border);
+}
+
+HorizontalSplitter:hover, VerticalSplitter:hover {
+    background: var(--orbit-accent);
+}
+
+/* Tabs for multi-session */
+.session-tabs {
+    height: 1;
+    background: var(--orbit-tab-bg);
+    border-bottom: solid var(--orbit-tab-border);
+    layout: horizontal;
+}
+
+.session-tab {
+    padding: 0 2;
+    color: var(--orbit-text-dim);
+    border-right: solid var(--orbit-tab-border);
+    min-width: 10;
+    content-align: center middle;
+}
+
+.session-tab.-active {
+    background: var(--orbit-tab-active-bg);
+    color: var(--orbit-accent);
+    border-bottom: thick var(--orbit-tab-active-border);
+}
+
+.session-tab:hover {
+    background: var(--orbit-surface-elevated);
+}
+
+.session-tab .close-btn {
+    color: var(--orbit-text-muted);
+    margin-left: 1;
+}
+
+.session-tab .close-btn:hover {
+    color: var(--orbit-error);
+}
+
+/* Floating modals */
+.floating-modal {
+    background: var(--orbit-surface-elevated);
+    border: thick var(--orbit-accent);
+    padding: 1;
+    width: 80%;
+    height: 60%;
+    max-width: 120;
+    max-height: 40;
+}
+
+/* Right Inspector Tabs */
+.inspector-tab {
+    height: 1;
+    layout: horizontal;
+}
+
+.inspector-tab-button {
+    padding: 0 2;
+    color: var(--orbit-text-dim);
+    background: transparent;
+    border: none;
+    border-bottom: solid var(--orbit-border);
+}
+
+.inspector-tab-button.-active {
+    color: var(--orbit-accent);
+    border-bottom: thick var(--orbit-accent);
+    text-style: bold;
+}
+
+/* Notification toast */
+.toast {
+    background: var(--orbit-surface-elevated);
+    border: solid var(--orbit-accent);
+    padding: 1 2;
+    margin: 1;
+    max-width: 60;
+}
+
+.toast.-success {
+    border-color: var(--orbit-success);
+}
+
+.toast.-error {
+    border-color: var(--orbit-error);
+}
+
+.toast.-warning {
+    border-color: var(--orbit-warning);
+}
+
+/* Context pin indicator */
+.context-pin {
+    color: var(--orbit-accent);
+    text-style: bold;
+}
+
+.context-pin.-pinned {
+    color: var(--orbit-success);
+}
+
+/* Token meter */
+.token-meter {
+    width: 100%;
+    height: 1;
+    background: var(--orbit-border);
+}
+
+.token-meter .fill {
+    height: 100%;
+    background: var(--orbit-accent);
+}
+
+.token-meter .fill.-warning {
+    background: var(--orbit-warning);
+}
+
+.token-meter .fill.-danger {
+    background: var(--orbit-error);
+}

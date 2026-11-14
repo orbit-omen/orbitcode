@@ -1,0 +1,190 @@
+/* OrbitCode Midnight Theme - Pure AMOLED Black */
+@import "textual.css";
+
+:root {
+    --orbit-bg: #000000;
+    --orbit-surface: #0A0A0A;
+    --orbit-surface-elevated: #121212;
+    --orbit-border: #1A1A1A;
+    --orbit-border-bright: #2A2A2A;
+
+    --orbit-accent: #BB86FC;
+    --orbit-accent-dim: #9A67D6;
+    --orbit-secondary: #03DAC6;
+    --orbit-cyan: #03DAC6;
+    --orbit-cyan-dim: #02B3A0;
+    --orbit-glow: #BB86FC;
+
+    --orbit-success: #4CAF50;
+    --orbit-warning: #FFB300;
+    --orbit-error: #CF6679;
+    --orbit-info: #64B5F6;
+
+    --orbit-diff-add: #1B5E20;
+    --orbit-diff-add-border: #4CAF50;
+    --orbit-diff-del: #B71C1C;
+    --orbit-diff-del-border: #CF6679;
+    --orbit-diff-change: #0D47A1;
+    --orbit-diff-change-border: #64B5F6;
+
+    --orbit-text: #FFFFFF;
+    --orbit-text-dim: #B0B0B0;
+    --orbit-text-muted: #606060;
+
+    --orbit-header-bg: #000000;
+    --orbit-header-text: #BB86FC;
+    --orbit-input-bg: #0A0A0A;
+    --orbit-input-border: #2A2A2A;
+    --orbit-input-focus-border: #BB86FC;
+    --orbit-scrollbar-bg: #0A0A0A;
+    --orbit-scrollbar-thumb: #2A2A2A;
+    --orbit-scrollbar-thumb-hover: #3A3A3A;
+
+    --orbit-mascot-body: #BB86FC;
+    --orbit-mascot-ring: #03DAC6;
+    --orbit-mascot-eye-idle: #03DAC6;
+    --orbit-mascot-eye-thinking: #03DAC6;
+    --orbit-mascot-eye-happy: #03DAC6;
+    --orbit-mascot-eye-error: #CF6679;
+
+    --orbit-status-bg: #000000;
+    --orbit-status-border: #1A1A1A;
+
+    --orbit-tab-bg: #0A0A0A;
+    --orbit-tab-active-bg: #121212;
+    --orbit-tab-border: #1A1A1A;
+    --orbit-tab-active-border: #BB86FC;
+
+    --orbit-tree-guide: #1A1A1A;
+    --orbit-tree-cursor-bg: #121212;
+    --orbit-tree-cursor-text: #BB86FC;
+
+    --orbit-button-bg: #121212;
+    --orbit-button-border: #2A2A2A;
+    --orbit-button-hover-bg: #1A1A1A;
+    --orbit-button-hover-border: #BB86FC;
+    --orbit-button-primary-bg: #BB86FC;
+    --orbit-button-primary-hover: #9A67D6;
+    --orbit-button-danger-bg: #B71C1C;
+    --orbit-button-danger-hover: #C62828;
+
+    --orbit-panel-bg: #0A0A0A;
+    --orbit-panel-border: #1A1A1A;
+    --orbit-panel-title: #BB86FC;
+
+    --orbit-tooltip-bg: #121212;
+    --orbit-tooltip-border: #BB86FC;
+    --orbit-tooltip-text: #FFFFFF;
+
+    --orbit-selection-bg: #BB86FC33;
+    --orbit-selection-text: #FFFFFF;
+
+    --orbit-animation-fast: 100ms;
+    --orbit-animation-normal: 200ms;
+    --orbit-animation-slow: 400ms;
+}
+
+Screen { background: var(--orbit-bg); color: var(--orbit-text); }
+Header { background: var(--orbit-header-bg); color: var(--orbit-header-text); text-style: bold; height: 1; border-bottom: solid var(--orbit-border); }
+Footer { background: var(--orbit-status-bg); color: var(--orbit-text-dim); border-top: solid var(--orbit-status-border); height: 1; }
+Footer .key { color: var(--orbit-accent); text-style: bold; }
+
+Input { background: var(--orbit-input-bg); border: solid var(--orbit-input-border); color: var(--orbit-text); padding: 0 1; margin: 0 1; }
+Input:focus { border: solid var(--orbit-input-focus-border); }
+
+Button { background: var(--orbit-button-bg); border: solid var(--orbit-button-border); color: var(--orbit-text); padding: 0 2; min-width: 10; }
+Button:hover { background: var(--orbit-button-hover-bg); border: solid var(--orbit-button-hover-border); }
+Button:focus { border: solid var(--orbit-accent); }
+Button.-primary { background: var(--orbit-button-primary-bg); border: solid var(--orbit-accent); color: var(--orbit-bg); }
+Button.-primary:hover { background: var(--orbit-button-primary-hover); }
+Button.-danger { background: var(--orbit-button-danger-bg); border: solid var(--orbit-error); color: var(--orbit-error); }
+Button.-danger:hover { background: var(--orbit-button-danger-hover); }
+
+Tree { background: var(--orbit-panel-bg); border: solid var(--orbit-panel-border); color: var(--orbit-text); }
+Tree > .tree--guide { color: var(--orbit-tree-guide); }
+Tree .tree--cursor { background: var(--orbit-tree-cursor-bg); color: var(--orbit-tree-cursor-text); }
+Tree .tree--cursor-line { background: var(--orbit-selection-bg); }
+
+Static { color: var(--orbit-text); }
+.panel-title { color: var(--orbit-panel-title); text-style: bold; margin-bottom: 1; }
+
+Log { background: var(--orbit-panel-bg); border: solid var(--orbit-panel-border); color: var(--orbit-text); padding: 1; }
+
+DataTable { background: var(--orbit-panel-bg); border: solid var(--orbit-panel-border); color: var(--orbit-text); }
+DataTable > .datatable--header { background: var(--orbit-surface-elevated); color: var(--orbit-accent); text-style: bold; }
+DataTable > .datatable--cursor { background: var(--orbit-selection-bg); color: var(--orbit-selection-text); }
+DataTable > .datatable--row-hover { background: var(--orbit-surface-elevated); }
+
+TabbedContent { background: var(--orbit-panel-bg); border: solid var(--orbit-panel-border); }
+TabbedContent .tabbed-content--tab-bar { background: var(--orbit-tab-bg); border-bottom: solid var(--orbit-tab-border); }
+TabbedContent .tabbed-content--tab { background: var(--orbit-tab-bg); color: var(--orbit-text-dim); border: solid var(--orbit-tab-border); border-bottom: none; padding: 0 2; margin: 0 1; }
+TabbedContent .tabbed-content--tab.-active { background: var(--orbit-tab-active-bg); color: var(--orbit-accent); border: solid var(--orbit-tab-active-border); border-bottom: none; }
+
+Vertical, Horizontal, Container { background: transparent; }
+
+#sidebar { width: 30%; min-width: 40; max-width: 60; border-right: solid var(--orbit-border); background: var(--orbit-panel-bg); }
+#main { width: 70%; background: var(--orbit-bg); }
+#right-inspector { width: 35%; min-width: 50; border-left: solid var(--orbit-border); background: var(--orbit-panel-bg); }
+
+.message-user { color: var(--orbit-cyan); text-style: bold; }
+.message-assistant { color: var(--orbit-secondary); }
+.message-tool { color: var(--orbit-warning); }
+.message-system { color: var(--orbit-text-dim); text-style: italic; }
+.message-error { color: var(--orbit-error); text-style: bold; }
+
+.tool-approval-card { background: var(--orbit-surface-elevated); border: solid var(--orbit-warning); padding: 1; margin: 1 0; }
+.tool-approval-card .button-row { height: auto; margin-top: 1; }
+
+.diff-viewer { background: var(--orbit-panel-bg); border: solid var(--orbit-panel-border); }
+.diff-viewer .diff-add { background: var(--orbit-diff-add); border-left: thick var(--orbit-diff-add-border); color: #A5D6A7; }
+.diff-viewer .diff-del { background: var(--orbit-diff-del); border-left: thick var(--orbit-diff-del-border); color: #EF9A9A; }
+.diff-viewer .diff-change { background: var(--orbit-diff-change); border-left: thick var(--orbit-diff-change-border); color: #90CAF9; }
+.diff-viewer .diff-context { color: var(--orbit-text-dim); }
+
+.status-pill { background: var(--orbit-surface-elevated); border: solid var(--orbit-border); color: var(--orbit-text); padding: 0 1; margin: 0 1; min-width: 12; }
+.status-pill:hover { border: solid var(--orbit-accent); background: var(--orbit-tab-active-bg); }
+.status-pill.-active { border: solid var(--orbit-accent); color: var(--orbit-accent); }
+
+.command-palette { background: var(--orbit-surface-elevated); border: solid var(--orbit-accent); padding: 1; }
+.command-palette .input { border: none; background: transparent; }
+.command-palette .results { max-height: 20; }
+.command-palette .result-item { padding: 0 1; color: var(--orbit-text); }
+.command-palette .result-item.-highlighted { background: var(--orbit-selection-bg); color: var(--orbit-accent); }
+
+.tooltip { background: var(--orbit-tooltip-bg); border: solid var(--orbit-tooltip-border); color: var(--orbit-tooltip-text); padding: 0 1; }
+
+.scrollbar { background: var(--orbit-scrollbar-bg); }
+.scrollbar .slider { background: var(--orbit-scrollbar-thumb); }
+.scrollbar .slider:hover { background: var(--orbit-scrollbar-thumb-hover); }
+
+#mascot-container { height: 7; width: 100%; content-align: center middle; background: transparent; }
+#mascot-static { content-align: center middle; width: auto; height: auto; }
+
+HorizontalSplitter, VerticalSplitter { background: var(--orbit-border); }
+HorizontalSplitter:hover, VerticalSplitter:hover { background: var(--orbit-accent); }
+
+.session-tabs { height: 1; background: var(--orbit-tab-bg); border-bottom: solid var(--orbit-tab-border); layout: horizontal; }
+.session-tab { padding: 0 2; color: var(--orbit-text-dim); border-right: solid var(--orbit-tab-border); min-width: 10; content-align: center middle; }
+.session-tab.-active { background: var(--orbit-tab-active-bg); color: var(--orbit-accent); border-bottom: thick var(--orbit-tab-active-border); }
+.session-tab:hover { background: var(--orbit-surface-elevated); }
+.session-tab .close-btn { color: var(--orbit-text-muted); margin-left: 1; }
+.session-tab .close-btn:hover { color: var(--orbit-error); }
+
+.floating-modal { background: var(--orbit-surface-elevated); border: thick var(--orbit-accent); padding: 1; width: 80%; height: 60%; max-width: 120; max-height: 40; }
+
+.inspector-tab { height: 1; layout: horizontal; }
+.inspector-tab-button { padding: 0 2; color: var(--orbit-text-dim); background: transparent; border: none; border-bottom: solid var(--orbit-border); }
+.inspector-tab-button.-active { color: var(--orbit-accent); border-bottom: thick var(--orbit-accent); text-style: bold; }
+
+.toast { background: var(--orbit-surface-elevated); border: solid var(--orbit-accent); padding: 1 2; margin: 1; max-width: 60; }
+.toast.-success { border-color: var(--orbit-success); }
+.toast.-error { border-color: var(--orbit-error); }
+.toast.-warning { border-color: var(--orbit-warning); }
+
+.context-pin { color: var(--orbit-accent); text-style: bold; }
+.context-pin.-pinned { color: var(--orbit-success); }
+
+.token-meter { width: 100%; height: 1; background: var(--orbit-border); }
+.token-meter .fill { height: 100%; background: var(--orbit-accent); }
+.token-meter .fill.-warning { background: var(--orbit-warning); }
+.token-meter .fill.-danger { background: var(--orbit-error); }

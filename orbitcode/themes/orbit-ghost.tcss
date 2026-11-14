@@ -1,0 +1,190 @@
+/* OrbitCode Ghost Theme - Minimal Monochrome High-Contrast */
+@import "textual.css";
+
+:root {
+    --orbit-bg: #FFFFFF;
+    --orbit-surface: #F5F5F5;
+    --orbit-surface-elevated: #EEEEEE;
+    --orbit-border: #E0E0E0;
+    --orbit-border-bright: #CCCCCC;
+
+    --orbit-accent: #000000;
+    --orbit-accent-dim: #333333;
+    --orbit-secondary: #666666;
+    --orbit-cyan: #000000;
+    --orbit-cyan-dim: #333333;
+    --orbit-glow: #000000;
+
+    --orbit-success: #2E7D32;
+    --orbit-warning: #F57F17;
+    --orbit-error: #C62828;
+    --orbit-info: #1565C0;
+
+    --orbit-diff-add: #E8F5E9;
+    --orbit-diff-add-border: #2E7D32;
+    --orbit-diff-del: #FDEDEC;
+    --orbit-diff-del-border: #C62828;
+    --orbit-diff-change: #E3F2FD;
+    --orbit-diff-change-border: #1565C0;
+
+    --orbit-text: #000000;
+    --orbit-text-dim: #424242;
+    --orbit-text-muted: #757575;
+
+    --orbit-header-bg: #FFFFFF;
+    --orbit-header-text: #000000;
+    --orbit-input-bg: #FFFFFF;
+    --orbit-input-border: #CCCCCC;
+    --orbit-input-focus-border: #000000;
+    --orbit-scrollbar-bg: #F5F5F5;
+    --orbit-scrollbar-thumb: #CCCCCC;
+    --orbit-scrollbar-thumb-hover: #BBBBBB;
+
+    --orbit-mascot-body: #000000;
+    --orbit-mascot-ring: #000000;
+    --orbit-mascot-eye-idle: #000000;
+    --orbit-mascot-eye-thinking: #000000;
+    --orbit-mascot-eye-happy: #000000;
+    --orbit-mascot-eye-error: #C62828;
+
+    --orbit-status-bg: #FFFFFF;
+    --orbit-status-border: #E0E0E0;
+
+    --orbit-tab-bg: #F5F5F5;
+    --orbit-tab-active-bg: #FFFFFF;
+    --orbit-tab-border: #E0E0E0;
+    --orbit-tab-active-border: #000000;
+
+    --orbit-tree-guide: #E0E0E0;
+    --orbit-tree-cursor-bg: #EEEEEE;
+    --orbit-tree-cursor-text: #000000;
+
+    --orbit-button-bg: #FFFFFF;
+    --orbit-button-border: #CCCCCC;
+    --orbit-button-hover-bg: #F5F5F5;
+    --orbit-button-hover-border: #000000;
+    --orbit-button-primary-bg: #000000;
+    --orbit-button-primary-hover: #333333;
+    --orbit-button-danger-bg: #FDEDEC;
+    --orbit-button-danger-hover: #FBE9E7;
+
+    --orbit-panel-bg: #F5F5F5;
+    --orbit-panel-border: #E0E0E0;
+    --orbit-panel-title: #000000;
+
+    --orbit-tooltip-bg: #FFFFFF;
+    --orbit-tooltip-border: #000000;
+    --orbit-tooltip-text: #000000;
+
+    --orbit-selection-bg: #00000033;
+    --orbit-selection-text: #000000;
+
+    --orbit-animation-fast: 100ms;
+    --orbit-animation-normal: 200ms;
+    --orbit-animation-slow: 400ms;
+}
+
+Screen { background: var(--orbit-bg); color: var(--orbit-text); }
+Header { background: var(--orbit-header-bg); color: var(--orbit-header-text); text-style: bold; height: 1; border-bottom: solid var(--orbit-border); }
+Footer { background: var(--orbit-status-bg); color: var(--orbit-text-dim); border-top: solid var(--orbit-status-border); height: 1; }
+Footer .key { color: var(--orbit-accent); text-style: bold; }
+
+Input { background: var(--orbit-input-bg); border: solid var(--orbit-input-border); color: var(--orbit-text); padding: 0 1; margin: 0 1; }
+Input:focus { border: solid var(--orbit-input-focus-border); }
+
+Button { background: var(--orbit-button-bg); border: solid var(--orbit-button-border); color: var(--orbit-text); padding: 0 2; min-width: 10; }
+Button:hover { background: var(--orbit-button-hover-bg); border: solid var(--orbit-button-hover-border); }
+Button:focus { border: solid var(--orbit-accent); }
+Button.-primary { background: var(--orbit-button-primary-bg); border: solid var(--orbit-accent); color: var(--orbit-bg); }
+Button.-primary:hover { background: var(--orbit-button-primary-hover); color: var(--orbit-bg); }
+Button.-danger { background: var(--orbit-button-danger-bg); border: solid var(--orbit-error); color: var(--orbit-error); }
+Button.-danger:hover { background: var(--orbit-button-danger-hover); }
+
+Tree { background: var(--orbit-panel-bg); border: solid var(--orbit-panel-border); color: var(--orbit-text); }
+Tree > .tree--guide { color: var(--orbit-tree-guide); }
+Tree .tree--cursor { background: var(--orbit-tree-cursor-bg); color: var(--orbit-tree-cursor-text); }
+Tree .tree--cursor-line { background: var(--orbit-selection-bg); }
+
+Static { color: var(--orbit-text); }
+.panel-title { color: var(--orbit-panel-title); text-style: bold; margin-bottom: 1; }
+
+Log { background: var(--orbit-panel-bg); border: solid var(--orbit-panel-border); color: var(--orbit-text); padding: 1; }
+
+DataTable { background: var(--orbit-panel-bg); border: solid var(--orbit-panel-border); color: var(--orbit-text); }
+DataTable > .datatable--header { background: var(--orbit-surface-elevated); color: var(--orbit-accent); text-style: bold; }
+DataTable > .datatable--cursor { background: var(--orbit-selection-bg); color: var(--orbit-selection-text); }
+DataTable > .datatable--row-hover { background: var(--orbit-surface-elevated); }
+
+TabbedContent { background: var(--orbit-panel-bg); border: solid var(--orbit-panel-border); }
+TabbedContent .tabbed-content--tab-bar { background: var(--orbit-tab-bg); border-bottom: solid var(--orbit-tab-border); }
+TabbedContent .tabbed-content--tab { background: var(--orbit-tab-bg); color: var(--orbit-text-dim); border: solid var(--orbit-tab-border); border-bottom: none; padding: 0 2; margin: 0 1; }
+TabbedContent .tabbed-content--tab.-active { background: var(--orbit-tab-active-bg); color: var(--orbit-accent); border: solid var(--orbit-tab-active-border); border-bottom: none; }
+
+Vertical, Horizontal, Container { background: transparent; }
+
+#sidebar { width: 30%; min-width: 40; max-width: 60; border-right: solid var(--orbit-border); background: var(--orbit-panel-bg); }
+#main { width: 70%; background: var(--orbit-bg); }
+#right-inspector { width: 35%; min-width: 50; border-left: solid var(--orbit-border); background: var(--orbit-panel-bg); }
+
+.message-user { color: var(--orbit-cyan); text-style: bold; }
+.message-assistant { color: var(--orbit-secondary); }
+.message-tool { color: var(--orbit-warning); }
+.message-system { color: var(--orbit-text-dim); text-style: italic; }
+.message-error { color: var(--orbit-error); text-style: bold; }
+
+.tool-approval-card { background: var(--orbit-surface-elevated); border: solid var(--orbit-warning); padding: 1; margin: 1 0; }
+.tool-approval-card .button-row { height: auto; margin-top: 1; }
+
+.diff-viewer { background: var(--orbit-panel-bg); border: solid var(--orbit-panel-border); }
+.diff-viewer .diff-add { background: var(--orbit-diff-add); border-left: thick var(--orbit-diff-add-border); color: #1B5E20; }
+.diff-viewer .diff-del { background: var(--orbit-diff-del); border-left: thick var(--orbit-diff-del-border); color: #B71C1C; }
+.diff-viewer .diff-change { background: var(--orbit-diff-change); border-left: thick var(--orbit-diff-change-border); color: #0D47A1; }
+.diff-viewer .diff-context { color: var(--orbit-text-dim); }
+
+.status-pill { background: var(--orbit-surface-elevated); border: solid var(--orbit-border); color: var(--orbit-text); padding: 0 1; margin: 0 1; min-width: 12; }
+.status-pill:hover { border: solid var(--orbit-accent); background: var(--orbit-tab-active-bg); }
+.status-pill.-active { border: solid var(--orbit-accent); color: var(--orbit-accent); }
+
+.command-palette { background: var(--orbit-surface-elevated); border: solid var(--orbit-accent); padding: 1; }
+.command-palette .input { border: none; background: transparent; }
+.command-palette .results { max-height: 20; }
+.command-palette .result-item { padding: 0 1; color: var(--orbit-text); }
+.command-palette .result-item.-highlighted { background: var(--orbit-selection-bg); color: var(--orbit-accent); }
+
+.tooltip { background: var(--orbit-tooltip-bg); border: solid var(--orbit-tooltip-border); color: var(--orbit-tooltip-text); padding: 0 1; }
+
+.scrollbar { background: var(--orbit-scrollbar-bg); }
+.scrollbar .slider { background: var(--orbit-scrollbar-thumb); }
+.scrollbar .slider:hover { background: var(--orbit-scrollbar-thumb-hover); }
+
+#mascot-container { height: 7; width: 100%; content-align: center middle; background: transparent; }
+#mascot-static { content-align: center middle; width: auto; height: auto; }
+
+HorizontalSplitter, VerticalSplitter { background: var(--orbit-border); }
+HorizontalSplitter:hover, VerticalSplitter:hover { background: var(--orbit-accent); }
+
+.session-tabs { height: 1; background: var(--orbit-tab-bg); border-bottom: solid var(--orbit-tab-border); layout: horizontal; }
+.session-tab { padding: 0 2; color: var(--orbit-text-dim); border-right: solid var(--orbit-tab-border); min-width: 10; content-align: center middle; }
+.session-tab.-active { background: var(--orbit-tab-active-bg); color: var(--orbit-accent); border-bottom: thick var(--orbit-tab-active-border); }
+.session-tab:hover { background: var(--orbit-surface-elevated); }
+.session-tab .close-btn { color: var(--orbit-text-muted); margin-left: 1; }
+.session-tab .close-btn:hover { color: var(--orbit-error); }
+
+.floating-modal { background: var(--orbit-surface-elevated); border: thick var(--orbit-accent); padding: 1; width: 80%; height: 60%; max-width: 120; max-height: 40; }
+
+.inspector-tab { height: 1; layout: horizontal; }
+.inspector-tab-button { padding: 0 2; color: var(--orbit-text-dim); background: transparent; border: none; border-bottom: solid var(--orbit-border); }
+.inspector-tab-button.-active { color: var(--orbit-accent); border-bottom: thick var(--orbit-accent); text-style: bold; }
+
+.toast { background: var(--orbit-surface-elevated); border: solid var(--orbit-accent); padding: 1 2; margin: 1; max-width: 60; }
+.toast.-success { border-color: var(--orbit-success); }
+.toast.-error { border-color: var(--orbit-error); }
+.toast.-warning { border-color: var(--orbit-warning); }
+
+.context-pin { color: var(--orbit-accent); text-style: bold; }
+.context-pin.-pinned { color: var(--orbit-success); }
+
+.token-meter { width: 100%; height: 1; background: var(--orbit-border); }
+.token-meter .fill { height: 100%; background: var(--orbit-accent); }
+.token-meter .fill.-warning { background: var(--orbit-warning); }
+.token-meter .fill.-danger { background: var(--orbit-error); }

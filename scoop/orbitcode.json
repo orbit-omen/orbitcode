@@ -1,0 +1,67 @@
+{
+  "version": "0.1.0",
+  "description": "AI Coding Agent with model failover, MCP, plugins, and session persistence",
+  "homepage": "https://github.com/OrbitOmen/orbitcode",
+  "license": "MIT",
+  "architecture": {
+    "64bit": {
+      "url": "https://github.com/OrbitOmen/orbitcode/releases/download/v0.1.0/orbitcode-windows-x64.zip",
+      "hash": "REPLACE_WITH_SHA256"
+    },
+    "32bit": {
+      "url": "https://github.com/OrbitOmen/orbitcode/releases/download/v0.1.0/orbitcode-windows-x86.zip",
+      "hash": "REPLACE_WITH_SHA256"
+    },
+    "arm64": {
+      "url": "https://github.com/OrbitOmen/orbitcode/releases/download/v0.1.0/orbitcode-windows-arm64.zip",
+      "hash": "REPLACE_WITH_SHA256"
+    }
+  },
+  "bin": [
+    "orbitcode.exe",
+    "ocode.exe"
+  ],
+  "shortcuts": [
+    [
+      "orbitcode.exe",
+      "OrbitCode"
+    ]
+  ],
+  "persist": [
+    "data",
+    "config.toml"
+  ],
+  "checkver": {
+    "github": "https://github.com/OrbitOmen/orbitcode"
+  },
+  "autoupdate": {
+    "architecture": {
+      "64bit": {
+        "url": "https://github.com/OrbitOmen/orbitcode/releases/download/v$version/orbitcode-windows-x64.zip"
+      },
+      "32bit": {
+        "url": "https://github.com/OrbitOmen/orbitcode/releases/download/v$version/orbitcode-windows-x86.zip"
+      },
+      "arm64": {
+        "url": "https://github.com/OrbitOmen/orbitcode/releases/download/v$version/orbitcode-windows-arm64.zip"
+      }
+    }
+  },
+  "notes": [
+    "OrbitCode has been installed!",
+    "",
+    "Quick start:",
+    "  orbitcode           # Start interactive mode",
+    "  orbitcode --setup   # Run setup wizard",
+    "  orbitcode --help    # Show all commands",
+    "  ocode               # Short alias",
+    "",
+    "Configuration:",
+    "  Set your OpenRouter API key:",
+    "    $env:OPENROUTER_API_KEY = \"your-key-here\"",
+    "  Or run 'orbitcode --setup' to configure interactively.",
+    "",
+    "Graphify Knowledge Graph:",
+    "  View at: /workspaces/codespaces-blank/graphify-out/graph.html"
+  ]
+}
